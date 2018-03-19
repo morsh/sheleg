@@ -1,7 +1,22 @@
 import * as React from 'react';
 import { Card, CardTitle, CardText } from 'react-md';
+import { SettingsStore, SettingsContainer, SettingsActions } from '../state';
+import connectToStores from 'alt-utils/lib/connectToStores';
 
-export default class Page1 extends React.Component {
+class Page1 extends React.Component<SettingsContainer> {
+
+  static getStores(props: {}) {
+    return [SettingsStore];
+  }
+
+  static getPropsFromStores(props: {}) {
+      return SettingsStore.getState();
+  }
+
+  componentWillMount() {
+    SettingsActions.saveSettingsAsync({ a: 10 });
+  }
+
   render() {
     return (
       <div className="md-grid md-text-container">
@@ -11,7 +26,7 @@ export default class Page1 extends React.Component {
         <Card className="md-cell">
           <CardTitle title="Card 1" />
           <CardText>
-            <p>Wowza</p>
+            <p>{this.props.settings.a}</p>
           </CardText>
         </Card>
         <Card className="md-cell">
@@ -30,3 +45,5 @@ export default class Page1 extends React.Component {
     );
   }
 }
+
+export default connectToStores(Page1);

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './utils/registerServiceWorker';
 import './index.css';
 import * as WebFontLoader from 'webfontloader';
 import { BrowserRouter as Router } from 'react-router-dom';

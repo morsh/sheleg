@@ -5,10 +5,10 @@ import NavLink from './components/NavLink';
 
 import './App.css';
 
-import Home from './Home';
-import Page1 from './Page1';
-import Page2 from './Page2';
-import Page3 from './Page3';
+import Home from './pages/Home';
+import Page1 from './pages/Page1';
+import Page2 from './pages/Page2';
+import Page3 from './pages/Page3';
 
 const navItems = [{
   exact: true,
